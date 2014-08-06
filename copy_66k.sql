@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 08 月 06 日 10:04
+-- 生成日期: 2014 年 08 月 06 日 10:06
 -- 服务器版本: 5.5.24-log
 -- PHP 版本: 5.3.13
 
@@ -19,6 +19,33 @@ SET time_zone = "+00:00";
 --
 -- 数据库: `copy_66k`
 --
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `category`
+--
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_title` varchar(50) NOT NULL,
+  PRIMARY KEY (`category_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+--
+-- 转存表中的数据 `category`
+--
+
+INSERT INTO `category` (`category_id`, `category_title`) VALUES
+(1, '視覺設計'),
+(2, '程式設計'),
+(3, '網路行銷'),
+(4, '市場開發 / 業務'),
+(5, '網站內容編輯'),
+(6, '行銷 / 企劃'),
+(7, '其他'),
+(8, '醫療'),
+(9, '電子業');
 
 -- --------------------------------------------------------
 
