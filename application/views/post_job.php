@@ -17,12 +17,6 @@
         <div class="modal fade" id="modal-container-344345" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
-              <div class="modal-header">
-               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-               <h4 class="modal-title" id="myModalLabel">
-                Modal title
-              </h4>
-              </div>
               <div class="modal-body" style="text-align:center;">
                 <h3> 感謝你願意在這裡分享 66K+ 的工作 </h3>
 

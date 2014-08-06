@@ -28,6 +28,12 @@ class Welcome extends CI_Controller {
 		$data['view'] = array('carousel','post_job','content');
 		$this->load->view('template',$data);
 	}
+
+	public function new_job()
+	{
+		$data['view'] = array('jobs/new');
+		$this->load->view('template',$data);
+	}
 }
 
 /* End of file welcome.php */
