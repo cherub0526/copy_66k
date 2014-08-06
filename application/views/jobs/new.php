@@ -13,70 +13,68 @@
       <h4 style="color:rgb(204, 0, 0)"> &nbsp; &nbsp;&nbsp;第一步，告訴我們詳細資訊 </h4>
       <div class="row clearfix">
         <div class="col-md-12 column">
-          <form role="form" class="simple_form form-horizontal">
+          <?php echo form_open('jobs/create_jobs',array('role'=>'form','class'=>'simple_form form-horizontal'));?>
             <div class="form-group">
-               <label class="col-sm-2 control-label" for="exampleInputEmail1">* Job Title</label>
+               <label class="col-sm-2 control-label" for="job_title">* Job Title</label>
                <div class="col-sm-10">
-                <input type="email" class="form-control" id="exampleInputEmail1" />
+                <input type="name" class="form-control" name="job_title"/>
               </div>
             </div>
             <div class="form-group">
-               <label class="col-sm-2 control-label" for="exampleInputPassword1">* Category</label>
+               <label class="col-sm-2 control-label" for="category">* Category</label>
                <div class="col-sm-10">
-                <span class="radio"><label for="job_category_id_1" name="job[category_id]"><input class="radio_buttons optional" id="job_category_id_1" name="job[category_id]" type="radio" value="1">視覺設計</label></span>
-                <span class="radio"><label for="job_category_id_1" name="job[category_id]"><input class="radio_buttons optional" id="job_category_id_1" name="job[category_id]" type="radio" value="1">視覺設計</label></span>
-                <span class="radio"><label for="job_category_id_1" name="job[category_id]"><input class="radio_buttons optional" id="job_category_id_1" name="job[category_id]" type="radio" value="1">視覺設計</label></span>
-                <span class="radio"><label for="job_category_id_1" name="job[category_id]"><input class="radio_buttons optional" id="job_category_id_1" name="job[category_id]" type="radio" value="1">視覺設計</label></span>
-                <span class="radio"><label for="job_category_id_1" name="job[category_id]"><input class="radio_buttons optional" id="job_category_id_1" name="job[category_id]" type="radio" value="1">視覺設計</label></span>
+                <?php foreach($category as $category):?>
+                <span class="radio"><label for="job_category_id_<?php echo $category['category_id'];?>" name="category"><input class="radio_buttons optional" id="job_category_id_<?php echo $category['category_id'];?>" name="category" type="radio" value="<?php echo $category['category_id'];?>"><?php echo $category['category_title'];?></label></span>
+                <?php endforeach;?>
               </div>
             </div>
             <div class="form-group">
-               <label class="col-sm-2 control-label" for="exampleInputPassword1">* 薪水</label>
+               <label class="col-sm-2 control-label" for="bound">* 薪水</label>
                <div class="col-sm-10">
                 <div class="input-prepend input-append">
-                  <input type="text" class="string optional" id="exampleInputPassword1" />
+                  <input type="text" class="string optional" placeholder="下限(Lower bound)" name="lower_bound"/>
                   ~
-                  <input type="text" class="string optional" id="exampleInputPassword1" />
+                  <input type="text" class="string optional" placeholder="上限(Higher bound)" name="higher_bound"/>
                 </div>
               </div>
             </div>
             <div class="form-group">
-               <label class="col-sm-2 control-label" for="exampleInputPassword1">* 工作地點</label>
+               <label class="col-sm-2 control-label" for="work_place">* 工作地點</label>
                <div class="col-sm-10">
-                <input type="password" class="form-control" id="exampleInputPassword1" />
+                <input type="text" class="form-control" name="work_place" />
               </div>
             </div>
             <div class="form-group">
-               <label class="col-sm-2 control-label" for="exampleInputPassword1">* 工作敘述</label>
+               <label class="col-sm-2 control-label" for="description">* 工作敘述</label>
                <div class="col-sm-10">
-                <textarea class="form-control" id="exampleInputPassword1" rows="5"></textarea>
+                <textarea class="form-control" rows="5" name="description"></textarea>
               </div>
             </div>
             <div class="form-group">
-               <label class="col-sm-2 control-label" for="exampleInputPassword1">* 如何應徵</label>
+               <label class="col-sm-2 control-label" for="how_hire">* 如何應徵</label>
                <div class="col-sm-10">
-                <textarea class="form-control" id="exampleInputPassword1" rows="5"></textarea>
+                <textarea class="form-control" rows="5" name="how_hire"></textarea>
               </div>
             </div>
 
             <h4 style="color:rgb(204, 0, 0)"> &nbsp; &nbsp;&nbsp;介紹你的公司  </h4>
 
             <div class="form-group">
-               <label class="col-sm-2 control-label" for="exampleInputPassword1">* 公司 / 組織名稱</label>
+               <label class="col-sm-2 control-label" for="company">* 公司 / 組織名稱</label>
                <div class="col-sm-10">
-                <input type="password" class="form-control" id="exampleInputPassword1" />
+                <input type="text" class="form-control" name="company"/>
               </div>
             </div>
             <div class="form-group">
-               <label class="col-sm-2 control-label" for="exampleInputPassword1">* URL</label>
+               <label class="col-sm-2 control-label" for="url">* URL</label>
                <div class="col-sm-10">
-                <input type="password" class="form-control" id="exampleInputPassword1" />
+                <input type="text" class="form-control" name="url"/>
               </div>
             </div>
             <div class="form-group">
-               <label class="col-sm-2 control-label" for="exampleInputPassword1">* Email</label>
+               <label class="col-sm-2 control-label" for="email">* Email</label>
                <div class="col-sm-10">
-                <input type="password" class="form-control" id="exampleInputPassword1" />
+                <input type="text" class="form-control" name="email"/>
               </div>
             </div>
             <div class="col-sm-11">

@@ -86,9 +86,10 @@
         </div>
       </nav>
       <?php
+
       foreach($view as $view)
       {
-        $this->load->view($view);
+        $this->load->view($view,$data);
       }
       ?>
         </div>

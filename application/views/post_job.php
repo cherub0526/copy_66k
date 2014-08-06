@@ -26,8 +26,7 @@
 
 
                 <br><br>
-
-                <a class="btn btn-lg btn-default btn-primary" href="/jobs/new">馬上來張貼好工作吧！</a>
+                <?php echo anchor('jobs/new_job','馬上來張貼好工作吧！',array('class'=>'btn btn-lg btn-default btn-primary'));?>
                 <br><br>
 
                 <p> <a href="#" style="color:#ccc; text-decoration:underline;" data-dismiss="modal"> 我改變心意了，我想貼的這個工作不值得 66 K </a> </p>
