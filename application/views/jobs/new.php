@@ -23,7 +23,11 @@
             <div class="form-group">
                <label class="col-sm-2 control-label" for="exampleInputPassword1">* Category</label>
                <div class="col-sm-10">
-                <input type="password" class="form-control" id="exampleInputPassword1" />
+                <span class="radio"><label for="job_category_id_1" name="job[category_id]"><input class="radio_buttons optional" id="job_category_id_1" name="job[category_id]" type="radio" value="1">視覺設計</label></span>
+                <span class="radio"><label for="job_category_id_1" name="job[category_id]"><input class="radio_buttons optional" id="job_category_id_1" name="job[category_id]" type="radio" value="1">視覺設計</label></span>
+                <span class="radio"><label for="job_category_id_1" name="job[category_id]"><input class="radio_buttons optional" id="job_category_id_1" name="job[category_id]" type="radio" value="1">視覺設計</label></span>
+                <span class="radio"><label for="job_category_id_1" name="job[category_id]"><input class="radio_buttons optional" id="job_category_id_1" name="job[category_id]" type="radio" value="1">視覺設計</label></span>
+                <span class="radio"><label for="job_category_id_1" name="job[category_id]"><input class="radio_buttons optional" id="job_category_id_1" name="job[category_id]" type="radio" value="1">視覺設計</label></span>
               </div>
             </div>
             <div class="form-group">
