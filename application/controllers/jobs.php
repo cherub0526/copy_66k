@@ -23,7 +23,21 @@ class Jobs extends CI_Controller {
     {
       $data['data']['result'][$content['category_id']] = $this->job_model->show_jobs($content['category_id'])->result_array();
     }
+
     $this->load->view('template',$data);
+  }
+
+  public function category($id)
+  {
+    $data = array(
+      'data' => array(
+        'category' => $this->job_model->category($id),
+      ),
+      'view' => array('post_job','jobs/category'),
+    );
+
+    $this->load->view('template',$data);
+
   }
 
   public function new_job()
@@ -31,6 +45,31 @@ class Jobs extends CI_Controller {
     $data = array(
       'data' => array('category' => $this->job_model->category()),
       'view' => array('jobs/new'),
+    );
+
+    $this->load->view('template',$data);
+  }
+
+  public function search()
+  {
+    $data = array(
+      'data' => array(
+        'search' => $this->job_model->search(),
+      ),
+      'view' => array('post_job','jobs/search'),
+    );
+
+    $this->load->view('template',$data);
+  }
+
+  public function show($id)
+  {
+    $data = array(
+      'data' => array(
+        'category' => $this->job_model->category(),
+        'detail' => $this->job_model->get_jobs($id),
+      ),
+      'view' => array('post_job','jobs/show'),
     );
 
     $this->load->view('template',$data);

@@ -1,15 +1,15 @@
       <div class="row" style="margin-top: 10px">
         <div class="col-sm-9 col-lg-8 col-lg-offset-2">
-          <form class="jobs-search-form" role="search">
+          <?php echo form_open('jobs/search', array('class'=>'jobs-search-form','role'=>'search'));?>
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="搜尋工作關鍵字...">
+              <input type="text" class="form-control" placeholder="搜尋工作關鍵字..." name="search">
               <span class="input-group-btn">
                 <button type="submit" class="btn btn-default">
                   <span class="glyphicon glyphicon-search"></span>
                 </button>
               </span>
             </div>
-          </form>
+          <?php echo form_close();?>
         </div>
         <div class="col-sm-3 col-lg-2">
           <a id="modal-344345" href="#modal-container-344345" role="button" class="btn btn-primary btn-block" data-toggle="modal">張貼一份 66K+ 工作</a>

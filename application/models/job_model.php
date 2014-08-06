@@ -7,9 +7,20 @@ class Job_model extends CI_Model {
     parent::__construct();
   }
 
-  public function category()
+  public function category($id = FALSE)
   {
-    $query = $this->db->get('category');
+    if($id === FALSE)
+    {
+      $query = $this->db->get('category');
+      return $query->result_array();
+    }
+    $query = $this->db->get_where('jobs',array('jobs_category'=>$id));
+    return $query->result_array();
+  }
+
+  public function get_jobs($id)
+  {
+    $query = $this->db->get_where('jobs',array('jobs_id'=>$id));
     return $query->result_array();
   }
 
@@ -40,6 +51,20 @@ class Job_model extends CI_Model {
       'jobs_update' => date('Y-m-d H:i:s')
     );
     $this->db->insert('jobs',$data);
+  }
+
+  public function search()
+  {
+    $search = $this->input->post('search');
+    $this->db->like('jobs_title',$search);
+    $this->db->or_like('jobs_company',$search);
+    $this->db->or_like('jobs_place',$search);
+    $this->db->or_where('jobs_higher <=',$search);
+    $this->db->or_where('jobs_lower >=',$search);
+
+    $query = $this->db->get('jobs');
+    return $query->result_array();
+
   }
 
 }

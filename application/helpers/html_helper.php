@@ -35,6 +35,17 @@
     {
 
     }
+  }
+
+  function turn_back_category($title,$own_id)
+  {
+    foreach($title as $title)
+    {
+      if($title['category_id'] == $own_id)
+      {
+        echo anchor('jobs/category/' . $title['category_id'], '看更多 ' . $title['category_title'] . ' 的工作 →', array('class'=>'underline pull-right'));
+      }
+    }
 
   }
 ?>

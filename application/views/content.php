@@ -46,7 +46,7 @@
                         <?php echo $value['jobs_company'];?>
                       </td>
                       <td>
-                        <?php echo $value['jobs_title'];?>
+                        <?php echo anchor('jobs/show/' . $value['jobs_id'], $value['jobs_title']);?>
                       </td>
                       <td>
                         <?php echo $value['jobs_update'];?>
