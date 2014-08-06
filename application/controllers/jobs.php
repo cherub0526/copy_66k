@@ -5,7 +5,7 @@ class Jobs extends CI_Controller {
   public function __construct()
   {
     parent::__construct();
-    $this->load->helper(array('url','form'));
+    $this->load->helper(array('url','form','html'));
     $this->load->model('job_model');
   }
 
@@ -27,7 +27,7 @@ class Jobs extends CI_Controller {
       }
       else
       {
-        $data['data']['result'][$content['category_id']] = array('jobs_id'=>'','jobs_title'=>'','jobs_company'=>'','jobs_update'=>'');
+        $data['data']['result'][$content['category_id']] = array('jobs_id'=>'0','jobs_title'=>'0','jobs_company'=>'0','jobs_update'=>'0');
       }
     }
     $this->load->view('template',$data);
