@@ -21,14 +21,7 @@ class Jobs extends CI_Controller {
 
     foreach($data['data']['tab'] as $content)
     {
-      if($this->job_model->show_jobs($content['category_id'])->num_rows > 0)
-      {
-        $data['data']['result'][$content['category_id']] = $this->job_model->show_jobs($content['category_id'])->result_array();
-      }
-      else
-      {
-        $data['data']['result'][$content['category_id']] = array('jobs_id'=>'0','jobs_title'=>'0','jobs_company'=>'0','jobs_update'=>'0');
-      }
+      $data['data']['result'][$content['category_id']] = $this->job_model->show_jobs($content['category_id'])->result_array();
     }
     $this->load->view('template',$data);
   }
