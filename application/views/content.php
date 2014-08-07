@@ -14,7 +14,7 @@
             <div class="tab-content">
               <?php foreach($tab as $content):?>
               <div class="tab-pane<?php active($content['category_id'],'tab'); ?>" id="panel-<?php echo $content['category_id'];?>">
-                <h1><?php echo $content['category_title'];?></h1>
+                <h1><?php echo anchor('jobs/category/' . $content['category_id'],$content['category_title'] );?>  <?php echo anchor('jobs/rss/' . $content['category_id'],'<img alt="Rss feed" src="' . base_url('img/rss-feed.png') . '" >');?></h1>
                 <table class="table">
                   <thead>
                     <tr>

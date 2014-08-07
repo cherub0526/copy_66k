@@ -5,7 +5,7 @@ class Jobs extends CI_Controller {
   public function __construct()
   {
     parent::__construct();
-    $this->load->helper(array('url','form','html'));
+    $this->load->helper(array('url','form','html','xml'));
     $this->load->model('job_model');
   }
 
@@ -73,6 +73,19 @@ class Jobs extends CI_Controller {
     );
 
     $this->load->view('template',$data);
+  }
+
+  public function rss($id)
+  {
+    $data['encoding'] = 'utf-8';
+    $data['feed_name'] = 'copy_66K';
+    $data['feed_url'] = 'http://localhost/copy_66k';
+    $data['page_description'] = 'Code Igniter, PHP, and the World of Web Design';
+    $data['page_language'] = 'en-ca';
+    $data['creator_email'] = 'Derek Allard is at derek at derekallard dot com';
+    $data['rss'] = $this->job_model->get_rss($id);
+    header("Content-Type: application/rss+xml");
+    $this->load->view('jobs/rss', $data);
   }
 
   public function create_jobs()

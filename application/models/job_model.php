@@ -35,6 +35,12 @@ class Job_model extends CI_Model {
     return $query;
   }
 
+  public function get_rss($id)
+  {
+    $query = $this->db->order_by('jobs_id','desc')->get_where('jobs',array('jobs_category'=>$id));
+    return $query;
+  }
+
   public function create_jobs()
   {
     $data = array(
