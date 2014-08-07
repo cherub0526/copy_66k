@@ -14,7 +14,7 @@ class Job_model extends CI_Model {
       $query = $this->db->get('category');
       return $query->result_array();
     }
-    $query = $this->db->get_where('jobs',array('jobs_category'=>$id));
+    $query = $this->db->order_by('jobs_id','desc')->get_where('jobs',array('jobs_category'=>$id));
     return $query->result_array();
   }
 

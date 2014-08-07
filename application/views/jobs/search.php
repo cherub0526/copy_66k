@@ -8,19 +8,19 @@
           <table class="table">
             <thead>
               <tr>
-                <th>
+                <th width="5%">
                   #
                 </th>
-                <th>
+                <th width="20%">
                   企業
                 </th>
-                <th>
+                <th width="55%">
                   職位
                 </th>
-                <th>
+                <th width="10%">
                   發布日期
                 </th>
-                <th>
+                <th width="10%">
                   薪資水準
                 </th>
               </tr>
@@ -29,7 +29,7 @@
               <?php foreach($search as $result ):?>
               <tr>
                 <td>
-                  <?php echo $result['jobs_id'];?>
+                  <?php dring_two_day($result['jobs_update']);?>
                 </td>
                 <td>
                   <?php echo $result['jobs_company'];?>

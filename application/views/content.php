@@ -18,19 +18,19 @@
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>
+                      <th width="5%">
                         #
                       </th>
-                      <th>
+                      <th width="20%">
                         企業
                       </th>
-                      <th>
+                      <th width="55%">
                         職位
                       </th>
-                      <th>
+                      <th width="10%">
                         發布日期
                       </th>
-                      <th>
+                      <th width="10%">
                         薪資水準
                       </th>
                     </tr>
@@ -39,7 +39,7 @@
                     <?php foreach($result[(int)$content['category_id']] as $category_result => $value):?>
                     <tr>
                       <td>
-                        <?php echo $value['jobs_id'];?>
+                        <?php dring_two_day($value['jobs_update']);?>
                       </td>
                       <td>
                         <?php echo $value['jobs_company'];?>

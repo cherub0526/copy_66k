@@ -54,6 +54,15 @@
     {
       echo " checked='checked'";
     }
+  }
+
+  function dring_two_day($day)
+  {
+    $tow_day = strtotime(date("Y-m-d",strtotime("-2 day")));
+    if($tow_day <= strtotime($day))
+    {
+      echo '<span class="label label-success">NEW</span>';
+    }
 
   }
 ?>
