@@ -1,6 +1,6 @@
       <div class="row clearfix">
         <div class="col-md-12 column">
-          <div class="tabbable" id="tabs-465105">
+          <div class="tabbable" id="tabs">
             <ul class="nav nav-tabs">
               <?php foreach($category as $category):?>
               <li<?php active($category['category_id'],'nav');?>>
@@ -36,8 +36,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <?php if(!empty($result[$content['category_id']])):?>
-                    <?php foreach($result[$content['category_id']] as $result => $value):?>
+                    <?php foreach($result[(int)$content['category_id']] as $category_result => $value):?>
                     <tr>
                       <td>
                         <?php echo $value['jobs_id'];?>
@@ -56,7 +55,6 @@
                       </td>
                     </tr>
                     <?php endforeach;?>
-                    <?php endif;?>
                   </tbody>
                 </table>
               </div>

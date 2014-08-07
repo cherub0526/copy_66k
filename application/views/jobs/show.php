@@ -13,7 +13,7 @@
             <span style="color:grey; font-weight:bold;"> <i class="glyphicon glyphicon-map-marker"></i> 上班地點 <?php echo $detail[0]['jobs_place'];?> </span>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <span style="color:grey; font-weight:bold;" class="pull-right">
-             <span class="label label-default ">新台幣 $<?php echo $detail[0]['jobs_lower'];?> 元</span>  ~ <span class="label label-default ">新台幣 $<?php echo $detail[0]['jobs_higher'];?> 元</span>
+             <span class="label <?php salary($detail[0]['jobs_lower']);?> ">新台幣 $<?php echo $detail[0]['jobs_lower'];?> 元</span>  ~ <span class="label <?php salary($detail[0]['jobs_higher']);?> ">新台幣 $<?php echo $detail[0]['jobs_higher'];?> 元</span>
              </span>
           </div>
           <hr>

@@ -94,7 +94,7 @@ class Jobs extends CI_Controller {
     $this->form_validation->set_rules('description', '工作敘述', 'required');
     $this->form_validation->set_rules('how_hire', '如何應徵', 'required');
     $this->form_validation->set_rules('company', '公司 / 組織名稱', 'required');
-    $this->form_validation->set_rules('email', 'Email', 'required');
+    $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 
     if ($this->form_validation->run() == FALSE)
     {

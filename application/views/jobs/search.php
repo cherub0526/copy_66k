@@ -3,7 +3,6 @@
           <br><br>
           <div class="job-nav-bar">
             <?php echo anchor('jobs', '← 回工作列表', array('class'=>'underline'));?>
-            <a class="underline pull-right" href="/categories/2">看更多 程式設計 的工作 →</a>
           </div>
           <br>
           <table class="table">
@@ -42,7 +41,7 @@
                   <?php echo $result['jobs_update'];?>
                 </td>
                 <td>
-                  <span class="label label-default <?php salary($value['jobs_higher']);?>"><?php echo "新台幣 " . $result['jobs_higher'];?></span>
+                  <span class="label <?php salary($result['jobs_higher']);?>"><?php echo "新台幣 " . $result['jobs_higher'];?></span>
                 </td>
               </tr>
             <?php endforeach;?>
