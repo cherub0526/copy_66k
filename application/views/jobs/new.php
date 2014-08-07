@@ -57,7 +57,7 @@
                <label class="col-sm-2 control-label" for="description">* 工作敘述</label>
                <div class="col-sm-10">
                 <?php echo form_error('description'); ?>
-                <textarea class="form-control" rows="5" name="description" value="<?php echo set_value('description'); ?>"></textarea>
+                <textarea class="md-input" rows="15" data-provide="markdown" name="description" value="<?php echo set_value('description'); ?>"></textarea>
               </div>
             </div>
             <div class="form-group">

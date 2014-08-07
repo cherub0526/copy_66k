@@ -42,6 +42,7 @@ class Jobs extends CI_Controller {
 
   public function new_job()
   {
+    $this->load->library('markdown');
     $data = array(
       'data' => array('category' => $this->job_model->category()),
       'view' => array('jobs/new'),
