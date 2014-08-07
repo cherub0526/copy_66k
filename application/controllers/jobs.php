@@ -77,20 +77,34 @@ class Jobs extends CI_Controller {
 
   public function create_jobs()
   {
-    // $this->load->library('form_validation');
+    $this->load->library('form_validation');
+    $this->form_validation->set_message('required', ' %s 不能空白');
+    $this->form_validation->set_message('integer', ' %s 必須為數字');
+    $this->form_validation->set_message('greater_than', ' %s 必須 6,6000元 以上');
 
-    // $this->form_validation->set_rules('username', 'Username', 'required');
-    // $this->form_validation->set_rules('password', 'Password', 'required');
-    // $this->form_validation->set_rules('passconf', 'Password Confirmation', 'required');
-    // $this->form_validation->set_rules('email', 'Email', 'required');
+    $this->form_validation->set_error_delimiters('<span class="label label-default label-danger">', '</span>');
 
-    // if ($this->form_validation->run() == FALSE)
-    // {
+    $this->form_validation->set_rules('job_title', '職位名稱', 'required');
+    $this->form_validation->set_rules('category', '分類', 'required');
 
-    // }
+    $this->form_validation->set_rules('lower_bound', '薪水下限', 'required|integer|greater_than[65999]');
+    $this->form_validation->set_rules('higher_bound', '薪水上限', 'required|integer|greater_than[65999]');
 
-    $this->job_model->create_jobs();
-    redirect('jobs/index');
+    $this->form_validation->set_rules('work_place', '工作地點', 'required');
+    $this->form_validation->set_rules('description', '工作敘述', 'required');
+    $this->form_validation->set_rules('how_hire', '如何應徵', 'required');
+    $this->form_validation->set_rules('company', '公司 / 組織名稱', 'required');
+    $this->form_validation->set_rules('email', 'Email', 'required');
+
+    if ($this->form_validation->run() == FALSE)
+    {
+      $this->new_job();
+    }
+    else
+    {
+      $this->job_model->create_jobs();
+      redirect('jobs/index');
+    }
   }
 
 }

@@ -41,7 +41,7 @@
                   <?php echo $result['jobs_update'];?>
                 </td>
                 <td>
-                  <span class="label label-default label-success"><?php echo "新台幣 " . $result['jobs_higher'];?></span>
+                  <span class="label label-default <?php salary($value['jobs_higher']);?>"><?php echo "新台幣 " . $result['jobs_higher'];?></span>
                 </td>
               </tr>
             <?php endforeach;?>

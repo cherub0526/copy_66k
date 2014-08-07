@@ -21,19 +21,19 @@
   {
     if($salary < 66000)
     {
-
+      echo "label-default";
     }
     else if($salary >= 66000 && $salary < 120000)
     {
-
+      echo "label-warning";
     }
     else if($salary >= 120000 && $salary < 180000)
     {
-
+      echo "label-success";
     }
     else
     {
-
+      echo "label-danger";
     }
   }
 
@@ -45,6 +45,14 @@
       {
         echo anchor('jobs/category/' . $title['category_id'], '看更多 ' . $title['category_title'] . ' 的工作 →', array('class'=>'underline pull-right'));
       }
+    }
+  }
+
+  function validation($validation,$value)
+  {
+    if($validation == $value)
+    {
+      echo " checked='checked'";
     }
 
   }

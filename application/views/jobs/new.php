@@ -15,45 +15,56 @@
         <div class="col-md-12 column">
           <?php echo form_open('jobs/create_jobs',array('role'=>'form','class'=>'simple_form form-horizontal'));?>
             <div class="form-group">
-               <label class="col-sm-2 control-label" for="job_title">* Job Title</label>
+               <label class="col-sm-2 control-label" for="job_title">* 職位名稱</label>
                <div class="col-sm-10">
-                <input type="name" class="form-control" name="job_title"/>
+                <?php echo form_error('job_title'); ?>
+                <input type="name" class="form-control" name="job_title" value="<?php echo set_value('job_title'); ?>"/>
               </div>
             </div>
             <div class="form-group">
-               <label class="col-sm-2 control-label" for="category">* Category</label>
+               <label class="col-sm-2 control-label" for="category">* 分類</label>
                <div class="col-sm-10">
+                <?php echo form_error('category'); ?>
                 <?php foreach($category as $category):?>
-                <span class="radio"><label for="job_category_id_<?php echo $category['category_id'];?>" name="category"><input class="radio_buttons optional" id="job_category_id_<?php echo $category['category_id'];?>" name="category" type="radio" value="<?php echo $category['category_id'];?>"><?php echo $category['category_title'];?></label></span>
+                <span class="radio">
+                  <label for="job_category_id_<?php echo $category['category_id'];?>" name="category">
+                    <input class="radio_buttons optional" id="job_category_id_<?php echo $category['category_id'];?>" name="category" type="radio" value="<?php echo $category['category_id'];?>" <?php validation(set_value('category'),$category['category_id']);?>><?php echo $category['category_title'];?>
+                  </label>
+                </span>
                 <?php endforeach;?>
               </div>
             </div>
             <div class="form-group">
                <label class="col-sm-2 control-label" for="bound">* 薪水</label>
                <div class="col-sm-10">
+                <?php echo form_error('lower_bound'); ?>
+                <?php echo form_error('higher_bound'); ?>
                 <div class="input-prepend input-append">
-                  <input type="text" class="string optional" placeholder="下限(Lower bound)" name="lower_bound"/>
+                  <input type="text" class="string optional" placeholder="下限(Lower bound)" name="lower_bound" value="<?php echo set_value('lower_bound'); ?>"/>
                   ~
-                  <input type="text" class="string optional" placeholder="上限(Higher bound)" name="higher_bound"/>
+                  <input type="text" class="string optional" placeholder="上限(Higher bound)" name="higher_bound" value="<?php echo set_value('higher_bound'); ?>"/>
                 </div>
               </div>
             </div>
             <div class="form-group">
                <label class="col-sm-2 control-label" for="work_place">* 工作地點</label>
                <div class="col-sm-10">
-                <input type="text" class="form-control" name="work_place" />
+                <?php echo form_error('work_place'); ?>
+                <input type="text" class="form-control" name="work_place" value="<?php echo set_value('work_place'); ?>"/>
               </div>
             </div>
             <div class="form-group">
                <label class="col-sm-2 control-label" for="description">* 工作敘述</label>
                <div class="col-sm-10">
-                <textarea class="form-control" rows="5" name="description"></textarea>
+                <?php echo form_error('description'); ?>
+                <textarea class="form-control" rows="5" name="description" value="<?php echo set_value('description'); ?>"></textarea>
               </div>
             </div>
             <div class="form-group">
                <label class="col-sm-2 control-label" for="how_hire">* 如何應徵</label>
                <div class="col-sm-10">
-                <textarea class="form-control" rows="5" name="how_hire"></textarea>
+                <?php echo form_error('how_hire'); ?>
+                <textarea class="form-control" rows="5" name="how_hire" value="<?php echo set_value('how_hire'); ?>"></textarea>
               </div>
             </div>
 
@@ -62,19 +73,22 @@
             <div class="form-group">
                <label class="col-sm-2 control-label" for="company">* 公司 / 組織名稱</label>
                <div class="col-sm-10">
-                <input type="text" class="form-control" name="company"/>
+                <?php echo form_error('company'); ?>
+                <input type="text" class="form-control" name="company" value="<?php echo set_value('company'); ?>"/>
               </div>
             </div>
             <div class="form-group">
                <label class="col-sm-2 control-label" for="url">* URL</label>
                <div class="col-sm-10">
-                <input type="text" class="form-control" name="url"/>
+                <?php echo form_error('url'); ?>
+                <input type="text" class="form-control" name="url" value="<?php echo set_value('url'); ?>"/>
               </div>
             </div>
             <div class="form-group">
                <label class="col-sm-2 control-label" for="email">* Email</label>
                <div class="col-sm-10">
-                <input type="text" class="form-control" name="email"/>
+                <?php echo form_error('email'); ?>
+                <input type="text" class="form-control" name="email" value="<?php echo set_value('email'); ?>"/>
               </div>
             </div>
             <div class="col-sm-11">
