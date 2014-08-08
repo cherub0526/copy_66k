@@ -32,7 +32,6 @@
   <script type="text/javascript" src="<?php echo base_url();?>js/jquery.min.js"></script>
   <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap.min.js"></script>
   <script type="text/javascript" src="<?php echo base_url();?>js/scripts.js"></script>
-  <script type="text/javascript" src="<?php echo base_url();?>js/bootstrap-markdown.js"></script>
 </head>
 
 <body>
@@ -101,5 +100,9 @@
     </div>
   </div>
 </div>
+<script type="text/javascript" src="<?php echo base_url();?>js/markdown.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/to-markdown.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/bootstrap-markdown.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/jquery.hotkeys.js"></script>
 </body>
 </html>
