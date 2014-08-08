@@ -18,7 +18,7 @@
           </div>
           <hr>
           <div>
-            <?php echo $detail[0]['jobs_description'];?>
+            <?php echo $this->markdown->parse($detail[0]['jobs_description']);?>
           </div>
           <br>
           <div class="well">
