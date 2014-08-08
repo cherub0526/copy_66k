@@ -40,9 +40,9 @@
                 <?php echo form_error('lower_bound'); ?>
                 <?php echo form_error('higher_bound'); ?>
                 <div class="input-prepend input-append">
-                  <input type="text" class="string optional" placeholder="下限(Lower bound)" name="lower_bound" value="<?php echo set_value('lower_bound'); ?>"/>
+                  <input type="number" class="string optional" placeholder="下限(Lower bound)" name="lower_bound" value="<?php echo set_value('lower_bound'); ?>"/>
                   ~
-                  <input type="text" class="string optional" placeholder="上限(Higher bound)" name="higher_bound" value="<?php echo set_value('higher_bound'); ?>"/>
+                  <input type="number" class="string optional" placeholder="上限(Higher bound)" name="higher_bound" value="<?php echo set_value('higher_bound'); ?>"/>
                 </div>
               </div>
             </div>
@@ -57,7 +57,7 @@
                <label class="col-sm-2 control-label" for="description">* 工作敘述</label>
                <div class="col-sm-10">
                 <?php echo form_error('description'); ?>
-                <textarea class="md-input" rows="15" data-provide="markdown" name="description" value="<?php echo set_value('description'); ?>"></textarea>
+                <textarea class="md-input" rows="15" data-provide="markdown" name="description"><?php echo set_value('description'); ?></textarea>
               </div>
             </div>
             <div class="form-group">
@@ -81,14 +81,14 @@
                <label class="col-sm-2 control-label" for="url">* URL</label>
                <div class="col-sm-10">
                 <?php echo form_error('url'); ?>
-                <input type="text" class="form-control" name="url" value="<?php echo set_value('url'); ?>"/>
+                <input type="url" class="form-control" name="url" value="<?php echo set_value('url'); ?>"/>
               </div>
             </div>
             <div class="form-group">
                <label class="col-sm-2 control-label" for="email">* Email</label>
                <div class="col-sm-10">
                 <?php echo form_error('email'); ?>
-                <input type="text" class="form-control" name="email" value="<?php echo set_value('email'); ?>"/>
+                <input type="email" class="form-control" name="email" value="<?php echo set_value('email'); ?>"/>
               </div>
             </div>
             <div class="col-sm-11">
