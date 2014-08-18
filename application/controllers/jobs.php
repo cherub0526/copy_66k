@@ -9,6 +9,11 @@ class Jobs extends CI_Controller {
     $this->load->model('job_model');
   }
 
+  public function hipchat()
+  {
+
+  }
+
   public function test($n,$a,$b,$c)
   {
     if($n == 1)
