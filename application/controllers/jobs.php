@@ -11,7 +11,7 @@ class Jobs extends CI_Controller {
 
   public function hipchat()
   {
-
+    echo phpinfo();
   }
 
   public function test($n,$a,$b,$c)
