@@ -9,6 +9,25 @@ class Jobs extends CI_Controller {
     $this->load->model('job_model');
   }
 
+  public function test($n,$a,$b,$c)
+  {
+    if($n == 1)
+    {
+      echo "Move sheet from " . $a . " to " . $c . "<br>";
+    }
+    else
+    {
+      $this->test($n-1,$a,$c,$b);
+      $this->test(1,$a,$b,$c);
+      $this->test($n-1,$b,$a,$c);
+    }
+  }
+
+  public function show2()
+  {
+    $this->test(5,'A','B','C');
+  }
+
   public function index()
   {
     $data = array(

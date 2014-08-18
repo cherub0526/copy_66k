@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Test</title>
+  <title>Work Remotely</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -41,49 +41,66 @@
       <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header">
            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-           <?php echo anchor('jobs', '66K 工作網', array('class'=>'navbar-brand'));?>
+           <?php echo anchor('jobs', '<strong>Remote Worker</strong>', array('class'=>'navbar-brand'));?>
         </div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h3 class="modal-title" id="myModalLabel"><strong>會員登入</strong></h3>
+              </div>
+              <div class="modal-body">
+                <!-- Form -->
+                <form role="form">
+                  <div class="form-group">
+                    <h4>使用Email登入：</h4>
+                    <label for="exampleInputEmail1">Email </label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">密碼</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div>
+                   <label><input type="checkbox"> 記住我</label>
+                 </div>
+                 <div style="padding-top: 10px">
+                   <button type="submit" class="btn btn-success">確認</button>
+                 </div>
+               </form>
+               <!-- Form End -->
+             </div>
+             <div class="modal-footer">
+              <div class="form-group" style="padding-right: 70%">
+                <p class="help-block" style="display: inline">還不是會員嗎？</p>
+                <?php echo anchor('user/register','立即註冊');?>
+              </div>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active">
-              <a href="#">選單1</a>
+            <li>
+              <a href="#">關於本站</a>
             </li>
             <li>
-              <a href="#">選單2</a>
+              <a href="#">訂閱</a>
             </li>
             <li>
-              <a href="#">選單3</a>
-            </li>
-            <li>
-              <a href="#">選單4</a>
-            </li>
-            <li>
-              <a href="#">選單5</a>
+              <a href="#">粉絲團</a>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="#">選單6</a>
-            </li>
-            <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown">下拉選單<strong class="caret"></strong></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="#">活動</a>
-                </li>
-                <li>
-                  <a href="#">作者活動</a>
-                </li>
-                <li>
-                  <a href="#">其他</a>
-                </li>
-                <li class="divider">
-                </li>
-                <li>
-                  <a href="#">我的帳號</a>
-                </li>
-              </ul>
+            <li style="padding-right: 20px">
+            <!-- Sign In  -->
+              <button type="button" class="btn btn-success navbar-btn" data-toggle="modal" data-target="#myModal">Sign In</button>
+
+
+              <!-- Sign In End -->
             </li>
           </ul>
         </div>
